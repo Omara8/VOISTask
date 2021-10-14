@@ -1,12 +1,15 @@
 package com.planatech.voistask.main.view
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.planatech.voistask.FullScreenActivity
 import com.planatech.voistask.databinding.ActivityMainBinding
 import com.planatech.voistask.main.viewmodel.MainViewModel
+import com.planatech.voistask.utils.IMAGE_URL
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
@@ -30,6 +33,9 @@ class MainActivity : AppCompatActivity() {
     private fun initAdapter() {
         imagesAdapter = ImagesAdapter {
             //item clicked and should show details
+            val intent = Intent(this, FullScreenActivity::class.java)
+            intent.putExtra(IMAGE_URL, it.download_url)
+            startActivity(intent)
         }
     }
 

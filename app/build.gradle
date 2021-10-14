@@ -78,4 +78,7 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$jetpack_version"
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:$jetpack_version"
     implementation "androidx.paging:paging-runtime-ktx:$paging_version"
+
+    implementation 'androidx.palette:palette:1.0.0'
+
 }
